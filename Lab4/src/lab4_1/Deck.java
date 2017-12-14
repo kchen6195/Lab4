@@ -30,8 +30,14 @@ public class Deck {
 		{
 			return null;
 		}
-		Card temp = 
+		Card temp = unDealt.get(0);
+		unDealt.remove(0);
+		Dealt.add(temp);
+		return temp;
 		
+	}
+	public void shuffle()
+	{
 		
 	}
 }
