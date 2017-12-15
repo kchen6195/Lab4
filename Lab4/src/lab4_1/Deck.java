@@ -38,6 +38,21 @@ public class Deck {
 	}
 	public void shuffle()
 	{
-		
+		for(int x = Dealt.size()-1; x > 0; x--)
+		{
+			int r= (int)(Math.random()* (x+1));
+			Card temp = Dealt.get(x);
+			Card otherTemp = Dealt.get(r);
+			Dealt.remove(x);
+			Dealt.add(x, otherTemp);
+			Dealt.remove(r);
+			Dealt.add(r, temp);
+		}
+		for(int x = 0; x < Dealt.size()-1;x++)
+		{
+			Card temp = Dealt.get(0);
+			Dealt.remove(0);
+			unDealt.add(temp);
+		}
 	}
 }
