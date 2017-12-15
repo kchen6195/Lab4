@@ -35,4 +35,5 @@ public class Card {
 		return "This card is " + rank + " of "+ suit + " and has "
 				+ "a value of "+ pointValue + " .";
 	}
+	
 }
