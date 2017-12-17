@@ -1,3 +1,9 @@
+/**
+ * Author: Kelvin Chen
+ * Date: 12/17/2017
+ * Lab 4.1
+ */
+
 package lab4_1;
 
 public class Card {
@@ -5,6 +11,12 @@ public class Card {
 	private String rank;
 	private String suit;
 	private int pointValue;
+	/**
+	 * Constructor
+	 * @param rank
+	 * @param suit
+	 * @param pointValue
+	 */
 	public Card(String rank,String suit,int pointValue)
 	{
 		this.rank = rank;
@@ -23,6 +35,11 @@ public class Card {
 	{
 		return this.pointValue;
 	}
+	/**
+	 * compares whether the cards are the same
+	 * @param otherCard
+	 * @return if the cards equal
+	 */
 	public boolean equals(Card otherCard)
 	{
 		return(this.rank == otherCard.getRank() &&
