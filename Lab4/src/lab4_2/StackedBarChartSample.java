@@ -26,13 +26,13 @@ public class StackedBarChartSample extends Application {
  
     @Override
     public void start(Stage stage) {
-        stage.setTitle("Bar Chart Sample");
-        sbc.setTitle("Country Summary");
-        xAxis.setLabel("Country");
+        stage.setTitle("SAT SCORES");
+        sbc.setTitle("AVERAGE SAT");
+        xAxis.setLabel("SCHOOL");
         xAxis.setCategories(FXCollections.<String>observableArrayList(
                 Arrays.asList(tech, stuy, bronx, latin, staten)));
-        yAxis.setLabel("Value");
-        series1.setName("2003");
+        yAxis.setLabel("SAT SCORE");
+        series1.setName("2012 test");
         series1.getData().add(new XYChart.Data<String, Number>(tech, 1833));
         series1.getData().add(new XYChart.Data<String, Number>(stuy, 2096));
         series1.getData().add(new XYChart.Data<String, Number>(bronx, 1969));
