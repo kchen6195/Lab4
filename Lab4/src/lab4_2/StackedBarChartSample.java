@@ -12,20 +12,16 @@ import javafx.stage.Stage;
  
 public class StackedBarChartSample extends Application {
  
-    final static String austria = "Austria";
-    final static String brazil = "Brazil";
-    final static String france = "France";
-    final static String italy = "Italy";
-    final static String usa = "USA";
+    final static String tech = "BROOKLYN TECH";
+    final static String stuy = "STUYVESANT";
+    final static String bronx = "BRONX SCI";
+    final static String latin = "BROOKLYN LATIN";
+    final static String staten = "STATEN ISLAND TECH";
     final CategoryAxis xAxis = new CategoryAxis();
     final NumberAxis yAxis = new NumberAxis();
     final StackedBarChart<String, Number> sbc =
             new StackedBarChart<String, Number>(xAxis, yAxis);
     final XYChart.Series<String, Number> series1 =
-            new XYChart.Series<String, Number>();
-    final XYChart.Series<String, Number> series2 =
-            new XYChart.Series<String, Number>();
-    final XYChart.Series<String, Number> series3 =
             new XYChart.Series<String, Number>();
  
     @Override
@@ -34,14 +30,14 @@ public class StackedBarChartSample extends Application {
         sbc.setTitle("Country Summary");
         xAxis.setLabel("Country");
         xAxis.setCategories(FXCollections.<String>observableArrayList(
-                Arrays.asList(austria, brazil, france, italy, usa)));
+                Arrays.asList(tech, stuy, bronx, latin, staten)));
         yAxis.setLabel("Value");
         series1.setName("2003");
-        series1.getData().add(new XYChart.Data<String, Number>(austria, 25601.34));
-        series1.getData().add(new XYChart.Data<String, Number>(brazil, 20148.82));
-        series1.getData().add(new XYChart.Data<String, Number>(france, 10000));
-        series1.getData().add(new XYChart.Data<String, Number>(italy, 35407.15));
-        series1.getData().add(new XYChart.Data<String, Number>(usa, 12000));
+        series1.getData().add(new XYChart.Data<String, Number>(tech, 1833));
+        series1.getData().add(new XYChart.Data<String, Number>(stuy, 2096));
+        series1.getData().add(new XYChart.Data<String, Number>(bronx, 1969));
+        series1.getData().add(new XYChart.Data<String, Number>(latin, 1740));
+        series1.getData().add(new XYChart.Data<String, Number>(staten, 1953));
         
         Scene scene = new Scene(sbc, 800, 600);
         sbc.getData().addAll(series1);
