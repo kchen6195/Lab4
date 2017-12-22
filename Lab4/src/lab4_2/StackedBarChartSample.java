@@ -26,26 +26,28 @@ public class StackedBarChartSample extends Application {
     final NumberAxis yAxis = new NumberAxis();
     final StackedBarChart<String, Number> sbc =
             new StackedBarChart<String, Number>(xAxis, yAxis);
-    final XYChart.Series<String, Number> series1 =
+    final XYChart.Series<String, Number> metric =
             new XYChart.Series<String, Number>();
  
     @Override
     public void start(Stage stage) {
         stage.setTitle("SAT SCORES");
+        
         sbc.setTitle("AVERAGE SAT");
         xAxis.setLabel("SCHOOL");
-        xAxis.setCategories(FXCollections.<String>observableArrayList(
-                Arrays.asList(tech, stuy, bronx, latin, staten)));
+        xAxis.setCategories(FXCollections.<String>observableArrayList( Arrays.asList(tech, stuy, bronx, latin, staten)));
+        
         yAxis.setLabel("SAT SCORE");
-        series1.setName("2012 test");
-        series1.getData().add(new XYChart.Data<String, Number>(tech, 1833));
-        series1.getData().add(new XYChart.Data<String, Number>(stuy, 2096));
-        series1.getData().add(new XYChart.Data<String, Number>(bronx, 1969));
-        series1.getData().add(new XYChart.Data<String, Number>(latin, 1740));
-        series1.getData().add(new XYChart.Data<String, Number>(staten, 1953));
+        
+        metric.setName("2012 test");
+        metric.getData().add(new XYChart.Data<String, Number>(tech, 1833));
+        metric.getData().add(new XYChart.Data<String, Number>(stuy, 2096));
+        metric.getData().add(new XYChart.Data<String, Number>(bronx, 1969));
+        metric.getData().add(new XYChart.Data<String, Number>(latin, 1740));
+        metric.getData().add(new XYChart.Data<String, Number>(staten, 1953));
         
         Scene scene = new Scene(sbc, 800, 600);
-        sbc.getData().addAll(series1);
+        sbc.getData().addAll(metric);
         stage.setScene(scene);
         stage.show();
     }
