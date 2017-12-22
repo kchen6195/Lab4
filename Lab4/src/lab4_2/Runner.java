@@ -2,6 +2,7 @@
 package lab4_2;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class Runner {
 
-	public static void main(String[] args) 
+	public static void main(String[] args) throws IOException 
 	{
 		List<Sat> scores = readScoresfromCSV("SATSCORES.csv");
 		for(Sat s: scores)
@@ -21,7 +22,17 @@ public class Runner {
 			System.out.println(s);
 		}
 
-	}
+		File sat = new File("information.csv");
+		
+		CSVUtilities csv = new CSVUtilities(sat);
+		
+		List<String> heading = csv.getColumnHeaders();
+		for (String x: heading) 
+		{
+			System.out.println(x);
+		}
+	 }
+	
 	private static List<Sat> readScoresfromCSV(String fileName)
 	{
 		List<Sat> scores = new ArrayList<>();
