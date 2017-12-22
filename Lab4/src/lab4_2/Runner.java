@@ -16,13 +16,7 @@ public class Runner {
 
 	public static void main(String[] args) throws IOException 
 	{
-		List<Sat> scores = readScoresfromCSV("SATSCORES.csv");
-		for(Sat s: scores)
-		{
-			System.out.println(s);
-		}
-
-		File sat = new File("information.csv");
+		File sat = new File("SATSCORES.csv");
 		
 		CSVUtilities csv = new CSVUtilities(sat);
 		
@@ -31,41 +25,47 @@ public class Runner {
 		{
 			System.out.println(x);
 		}
+		
+		List<String> School = CSVUtilities.getDataString(0);
+		for(String x : School)
+		{
+			System.out.print(x+ " ");
+		}
+		System.out.println();
+		List<String> Name = CSVUtilities.getDataString(1);
+		for(String x : Name)
+		{
+			System.out.print(x+ " ");
+		}
+		System.out.println();
+		List<Integer> Takers = CSVUtilities.getDataInt(2);
+		for(int x : Takers)
+		{
+			System.out.print(x+ " ");
+		}
+		System.out.println();
+		List<Integer> Eng = CSVUtilities.getDataInt(3);
+		for(int x : Eng)
+		{
+			System.out.print(x+ " ");
+		}
+		System.out.println();
+		List<Integer> math = CSVUtilities.getDataInt(4);
+		for(int x : math)
+		{
+			System.out.print(x+ " ");
+		}
+		System.out.println();
+		List<Integer> Writ = CSVUtilities.getDataInt(5);
+		for(int x : Writ)
+		{
+			System.out.print(x+ " ");
+		}
+		System.out.println();
 	 }
 	
-	private static List<Sat> readScoresfromCSV(String fileName)
-	{
-		List<Sat> scores = new ArrayList<>();
-		Path pathToFile = Paths.get(fileName);
-		try(BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII))
-		{
-			String line = br.readLine();
-			while(line!= null)
-			{
-				  String[] attributes = line.split(",");
-				  
-				  Sat score = createScore(attributes);
-				  scores.add(score);
-				  line = br.readLine();
-			}
-		 } catch (IOException ioe) 
-		{
-			  ioe.printStackTrace();
-		}
-		 return scores;
-	}
-	private static Sat createScore(String[] metadata)
-	{
-		String DBN =  metadata[0];
-		String school = metadata[1];
-		int satTakers = Integer.parseInt(metadata[2]);
-		int avgEnglish = Integer.parseInt(metadata[3]);
-		int avgMath = Integer.parseInt(metadata[4]);
-		int avgWriting = Integer.parseInt(metadata[5]);
-		Sat test = new Sat(DBN,school,satTakers,avgEnglish,avgMath,avgWriting);
-		return test;
-	}
 	
+
 	
 
 }
