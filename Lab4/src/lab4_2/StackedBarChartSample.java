@@ -1,3 +1,8 @@
+/**
+ * Author: Kelvin Chen
+ * Date: 12/22/2017
+ * Lab 4.2
+ */
 package lab4_2;
 
 import java.util.Arrays;

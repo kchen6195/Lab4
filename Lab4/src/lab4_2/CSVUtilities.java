@@ -1,3 +1,8 @@
+/**
+ * Author: Kelvin Chen
+ * Date: 12/22/2017
+ * Lab 4.2
+ */
 package lab4_2;
 
 import java.io.BufferedReader;
@@ -10,7 +15,11 @@ public class CSVUtilities {
 
 	private static ArrayList<String> CSVData = new ArrayList<String>();
 	private int cols;
-	
+	/**
+	 * reads csv file
+	 * @param csv
+	 * @throws IOException
+	 */
 	public CSVUtilities(File csv) throws IOException {
 		FileReader csv2 = new FileReader(csv);
 		
@@ -27,12 +36,19 @@ public class CSVUtilities {
 		
 		this.cols = getColumnHeaders().size();
 	}
-
+/**
+ * gets the heading of the csv
+ * @return returns top row
+ */
 	public List<String> getColumnHeaders()
 	{
 		return Arrays.asList(CSVData.get(0).split(","));
 	}
-	
+	/**
+	 * gets all in column besides header
+	 * @param column
+	 * @return strings in column
+	 */
 	public static List<String> getDataString(int column)
 	{
 		ArrayList<String> data = new ArrayList<String>();
@@ -43,7 +59,11 @@ public class CSVUtilities {
 		}
 		return data;
 	}
-	
+	/**
+	 * gets all in column besides header
+	 * @param column
+	 * @return ints in column
+	 */
 	public static List<Integer> getDataInt(int column) 
 	{
 		ArrayList<Integer> data = new ArrayList<Integer>();
@@ -54,7 +74,11 @@ public class CSVUtilities {
 		}
 		return data;
 	}
-	
+	/**
+	 * gets all in column besides header
+	 * @param column
+	 * @return double in column
+	 */
 	public static List<Double> getDataDouble(int column) 
 	{
 		ArrayList<Double> data = new ArrayList<Double>();

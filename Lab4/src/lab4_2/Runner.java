@@ -1,4 +1,8 @@
-
+/**
+ * Author: Kelvin Chen
+ * Date: 12/22/2017
+ * Lab 4.2
+ */
 package lab4_2;
 
 import java.io.BufferedReader;
@@ -25,7 +29,7 @@ public class Runner {
 		{
 			System.out.println(x);
 		}
-		
+		//test string
 		List<String> School = CSVUtilities.getDataString(0);
 		for(String x : School)
 		{
@@ -38,6 +42,7 @@ public class Runner {
 			System.out.print(x+ " ");
 		}
 		System.out.println();
+		//test int
 		List<Integer> Takers = CSVUtilities.getDataInt(2);
 		for(int x : Takers)
 		{
